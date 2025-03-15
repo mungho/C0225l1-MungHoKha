@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <form action="#" method="get">
+        <h2>Market Research Survey</h2>
+        <p>Please take a few moments to complete this sactifaction Survey</p>
+        <p>-----------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <h3><label for="agerange">What is your age range?</label></h3>
+        <select name="agerange" id="age" style="width: 300px;">
+            <option value="youth">0 - 18</option>
+            <option value="youngadults">18 - 24</option>
+            <option value="adults">24 - 60</option>
+            <option value="elderly">60+</option>
+        </select>
+        <br>
+        <br>
+        <h3><label for="income">What is your yearly income range?</label></h3>
+        <select name="income" id="income" style="width: 300px;">
+            <option value="low">$0 - $25,000</option>
+            <option value="medium">$25,000 - $60,000</option>
+            <option value="high">$60,000+</option>
+        </select>
+        <br><br>
+        <h3><label for="gender">Gender</label></h3>
+        <input type="radio" value="male" id="male" name="gender">
+        <label for="male">Male</label>
+        <br>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Female</label>
+        <br><br>
+        <h3><label for="product">Which of the following products have you purchased in the last 2 months. Please check all that apply.</label></h3>
+        <input type="checkbox" id="product1" name="product1" value="product1">
+        <label for="product1">Product 1</label>
+        <br>
+        <input type="checkbox" id="product2" name="product2" value="product2">
+        <label for="product2">Product 2</label>
+        <br>
+        <input type="checkbox" name="product3" id="product3" value="product3">
+        <label for="product3">Product 3</label>
+        <br><br>
+        <h3><label for="frequency">How often you use the new product? </label></h3>
+        <input type="radio" name="daily" id="daily" value="daily">
+        <label for="daily">Daily</label>
+        <br>
+        <input type="radio" name="weekly" id="weekly" value="weekly">
+        <label for="weekly">Weekly</label>
+        <br>
+        <input type="radio" name="monthly" id="monthly" value="monthly">
+        <label for="monthly">Monthly</label>
+        <br><br>
+        <table>
+            <tr>
+                <td>$</td>
+                <td><input type="text" style="width: 80px;"></td>
+                <td>.</td>
+                <td><input type="text" style="width: 80px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Dollars</td>
+                <td></td>
+                <td>Cents</td>
+            </tr>
+        </table>
+        <h3><label for="att.features">What features would you like to see in the new product</label></h3>
+        <textarea name="att.features" id="att.features" rows="5" style="width: 885px;"></textarea>
+        <p>Please rate your level agreement with the following statements.</p>
+        <table style="border: 1px solid;">
+            <tr style="background-color: rgb(196, 196, 196);height: 50px;">
+                <td></td>
+                <td style="width: 120px; text-align: center;">Strong Disagree</td>
+                <td style="width: 120px; text-align: center;">Disagree</td>
+                <td style="width: 120px; text-align: center;">Agree</td>
+                <td style="width: 120px; text-align: center;">Strong Agree</td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Our product are priced fairly</td>
+                <td style="text-align: center;">
+                    <input type="radio" name="price" id="stdisagree" value="strongdisagree">
+                    <p><label for="stdisagree">1</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="price" id="disagree" value="disagree">
+                    <p><label for="disagree">2</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="price" id="agree" value="agree">
+                    <p><label for="agree">3</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="price" id="stragree" value="strongagree">
+                    <p><label for="stragree">4</label></p>
+                </td>
+            </tr>
+            <tr style="background-color: rgb(196, 196, 196);width: 150px;">
+                <td>Our products are high quality</td>
+                <td style="text-align: center;">
+                    <input type="radio" name="quality" id="stdisagree" value="strongdisagree">
+                    <p><label for="stdisagree">1</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="quality" id="disagree" value="disagree">
+                    <p><label for="disagree">2</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="quality" id="agree" value="agree">
+                    <p><label for="agree">3</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="quality" id="stragree" value="strongagree">
+                    <p><label for="stragree">4</label></p>
+            </tr>
+            <tr>
+                <td>You wwould recommend our product to a friend or coworker</td>
+                <td style="text-align: center;">
+                    <input type="radio" name="promote" id="stdisagree" value="strongdisagree">
+                    <p><label for="stdisagree">1</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="promote" id="disagree" value="disagree">
+                    <p><label for="disagree">2</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="promote" id="agree" value="agree">
+                    <p><label for="agree">3</label></p>
+                </td>
+                <td style="text-align: center;">
+                    <input type="radio" name="promote" id="stragree" value="strongagree">
+                    <p><label for="stragree">4</label></p>
+            </tr>
+        </table>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</html>
