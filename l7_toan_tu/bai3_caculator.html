@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Caculator</title>
+    </head>
+    <body>
+        <h2>Caculator</h2>
+        <table>
+            <tr style="height: 30px;">
+                <td colspan="2">
+                    <input type="number" id="num1" style="width: 238px;" placeholder="First number">
+                </td>
+                <td colspan="2">
+                    <input type="number" id="num2" style="width: 238px;" placeholder="Second number">
+                </td>
+            </tr>
+            <tr style="height: 30px;">
+                <td style="width: 120px;"><button type="button" id="add" style="width: 120px;" onclick="add()">Addition (+)</button></td>
+                <td style="width: 120px;"> <button type="button" id="subtr" style="width: 120px;" onclick="subtraction()">Subtraction (-)</button></td>
+                <td style="width: 120px;"><button type="button" id="multp" style="width: 120px;" onclick="multp()">Multiplication (x)</button></td>
+                <td style="width: 120px;"><button type="button" id="division" style="width: 120px;" onclick="division()">Division (/)</button></td>
+            </tr>
+        </table>
+        <p id="result"></p>
+    </body>
+    <script>
+
+        function add(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let sum = num1 + num2;
+            document.getElementById("result").innerHTML = "The result is: " + sum;
+        }
+
+        function subtraction(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let subtraction = num1 - num2;
+            document.getElementById("result").innerHTML = "The result is: " + subtraction;
+        }
+        
+        function multp(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let multp = num1 * num2;
+            document.getElementById("result").innerHTML = "The result is: " + multp;
+        }
+
+        function division(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let division = num1 / num2;
+            document.getElementById("result").innerHTML = "The result is: " + division;
+        }
+    </script>
+</html>

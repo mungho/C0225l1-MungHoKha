@@ -1,0 +1,103 @@
+
+<!-- Bài 1: Điểm trung bình -->
+<!-- <!DOCTYPE html>
+<html>
+    <form action="#" method="get">
+        <table id="myTable">
+            <tr>
+                <td colspan="2"><h3>Form nhập điểm</h3></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ly">Vật lý: </label>
+                </td>
+                <td>
+                    <input type="number" id="ly">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="hoa">Hóa học: </label>
+                </td>
+                <td>
+                    <input type="number" id="hoa">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Sinh">Sinh học: </label>
+                </td>
+                <td>
+                    <input type="number" id="sinh">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <bu*tton type="submit" onclick="trungbinh()">Tính điểm</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br><br>
+    <p id="hienthi"></p>
+    <script>
+        function trungbinh(){
+            let ly = +document.getElementById("ly").value;
+            let hoa = +document.getElementById("hoa").value;
+            let sinh = +document.getElementById("sinh").value;
+            let trungbinh = (ly + hoa + sinh)/3;
+            document.getElementById("hienthi").innerHTML = "Điểm trung bình là: " + trungbinh;
+        }
+    </script>
+</html> -->
+
+
+
+<!-- Bài 2: Quy đổi nhiệt độ -->
+<!-- <!DOCTYPE html>
+<html>
+    <body>
+        <form action="#" method="get">
+            <table>
+                <tr>
+                    <td><input type="number" id="celsius" placeholder="Độ Celsius"></td>
+                    <td><button type="submit" onclick="quydoi()">Quy đổi</button></td>
+                </tr>
+            </table>
+        </form>
+        <p id="result"></p>
+    </body>
+    <script>
+        function quydoi(){
+            let celsius = parseFloat(document.getElementById("celsius").value);
+            let doF = (9*celsius)/5 +32;
+            document.getElementById("result").innerHTML = "Nhiệt độ Fahrenheit là: " + doF;
+        }
+    </script>
+</html> -->
+
+
+<!-- Bài 3&4: Diện tích hình tròn -->
+<!-- <!DOCTYPE html>
+<html>
+    <body>
+        <table>
+            <tr>
+                <td><input type="number" id="bankinh" placeholder="Nhập bán kính"></td>
+                <td><button type="button" onclick="dthinhtron()">Tính diện tích</button></td>
+            </tr>
+        </table>
+        <p id="hienthidt"></p>
+        <p id="hienthicv"></p>
+    </body>
+    <script>
+        function dthinhtron(){
+            let r = parseFloat(document.getElementById("bankinh").value);
+            let dientich = Math.PI*r*r;
+            let chuvi = 2*Math.PI*r;
+            document.getElementById("hienthidt").innerHTML = "Diện tích hình tròn: " + dientich;
+            document.getElementById("hienthicv").innerHTML = "Chu vi hình tròn: " + chuvi;
+        }
+    </script>
+</html> -->
+
