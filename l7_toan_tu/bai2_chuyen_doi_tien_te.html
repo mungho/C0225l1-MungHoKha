@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <table>
+            <tr>
+                <td style="width: 80px;"><label for="amount">Amount</label></td>
+                <td style="width: 120px;"><label for="fcurrency">From Currency</label></td>
+                <td style="width: 120px;"><label for="tcurrency">To Currency</label></td>
+                <td style="width: 80px;"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="amount"></td>
+                <td><select name="fcurrency" id="fcurrency" style="width: 120px;">
+                    <option value="vn">Vietnam</option>
+                    <option value="usd">USD</option>
+                </select></td>
+                <td>
+                    <select name="tcurrency" id="tcurrency" style="width: 120px;">
+                        <option value="vn">Vietnam</option>
+                        <option value="usd">USD</option>
+                    </select>
+                </td>
+                <td><button type="button" id="exchange" onclick="exchange()">Convert</button></td>
+            </tr>
+        </table>
+        <p id="result"></p>
+    </body>
+    <script>
+        function exchange(){
+            let fromCurrency = document.getElementById("fcurrency").value;
+            let toCurrency = document.getElementById("tcurrency").value;
+            let amount = +document.getElementById("amount").value;
+
+            if(fromCurrency == "vn" && toCurrency == "usd"){
+                document.getElementById("result").innerHTML = "Result: " + amount/23000;
+            }
+            
+            else if(fromCurrency == "usd" && toCurrency == "vn"){
+                document.getElementById("result").innerHTML = "Result: " + amount*23000;
+            }
+            else{
+                document.getElementById("result").innerHTML = "Result: " + amount;
+            }
+        }
+    </script>
+</html>
