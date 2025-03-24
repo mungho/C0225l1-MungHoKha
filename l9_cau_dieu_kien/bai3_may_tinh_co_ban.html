@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="view"></td>
+        </tr>
+        <tr>
+            <td><button id="but1" style="width: 40px;" onclick="inputNumber1()">1</button></td>
+            <td><button id="but2" style="width: 40px;" onclick="inputNumber2()">2</button></td>
+            <td><button id="but3" style="width: 40px;" onclick="inputNumber3()">3</button></td>
+            <td><button id="butplus" style="width: 40px;" onclick="inputPlus()">+</button></td>
+        </tr>
+        <tr>
+            <td><button id="but4" style="width: 40px;" onclick="inputNumber4()">4</button></td>
+            <td><button id="but5" style="width: 40px;" onclick="inputNumber5()">5</button></td>
+            <td><button id="but6" style="width: 40px;" onclick="inputNumber6()">6</button></td>
+            <td><button id="but-minus" style="width: 40px;" onclick="inputMinus()">-</button></td>
+        </tr>
+        <tr>
+            <td><button id="but7" style="width: 40px;" onclick="inputNumber7()">7</button></td>
+            <td><button id="but8" style="width: 40px;" onclick="inputNumber8()">8</button></td>
+            <td><button id="but9" style="width: 40px;" onclick="inputNumber9()">9</button></td>
+            <td><button id="but-multi" style="width: 40px;" onclick="inputMulti()">*</button></td>
+        </tr>
+        <tr>
+            <td><button id="but-ac" style="width: 40px;" onclick="deleteAll()">AC</button></td>
+            <td><button id="but0" style="width: 40px;" onclick="inputNumber0()">0</button></td>
+            <td><button id="but-equal" style="width: 40px;" onclick="equal()">=</button></td>
+            <td><button id="but-divide" style="width: 40px;" onclick="inputDivide()">/</button></td>
+        </tr>
+    </table>
+    <p id="showResult"></p>
+    <script>
+        
+        function inputNumber0(){
+            document.getElementById("view").value += "0";
+        }
+
+        function inputNumber1(){
+            document.getElementById("view").value += "1";
+        }
+
+        function inputNumber2(){
+            document.getElementById("view").value += "2";
+        }
+        
+        function inputNumber3(){
+            document.getElementById("view").value += "3";
+        }
+        
+        function inputNumber4(){
+            document.getElementById("view").value += "4";
+        }
+
+        
+        function inputNumber5(){
+            document.getElementById("view").value += "5";
+        }
+        
+        function inputNumber6(){
+            document.getElementById("view").value += "6";
+        }
+        
+        function inputNumber7(){
+            document.getElementById("view").value += "7";
+        }
+        
+        function inputNumber8(){
+            document.getElementById("view").value += "8";
+        }
+        
+        function inputNumber9(){
+            document.getElementById("view").value += "9";
+        }
+        
+        function inputPlus(){
+            document.getElementById("view").value += "+";
+        }
+        
+        function inputMinus(){
+            document.getElementById("view").value += "-";
+        }
+        
+        function inputMulti(){
+            document.getElementById("view").value += "*";
+        }
+        
+        function inputDivide(){
+            document.getElementById("view").value += "/";
+        }
+
+        function equal(){
+            let result = eval (document.getElementById("view").value);
+            document.getElementById("view").value = result;
+        }
+
+        function deleteAll(){
+            document.getElementById("view").value = "";
+        }
+    </script>
+</html>

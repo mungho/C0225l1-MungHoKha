@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <table>
+            <tr>
+                <td style="width: 100px;"><input type="number" id="weight" placeholder="Your weight"></td>
+                <td style="width: 100px;"><input type="number" id="height" placeholder="Your height"></td>
+                <td style="width: 100px;"><button type="button" id="submit" onclick="check()">Check BMI</button></td>
+            </tr>
+            <tr>
+                <td colspan="3"><p id="result"></p></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="word-wrap: break-word;"><p id="advise"></p></td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        function check(){
+            let weight = +document.getElementById("weight").value;
+            let height = +document.getElementById("height").value;
+            let bmi = weight/(height*height);
+
+            if(bmi < 18.5){
+                document.getElementById("result").innerHTML = "Underweight: " + bmi;
+                document.getElementById("advise").innerHTML = "Advise: Increase calorie intake with nutritious foods. Focus on protein, healthy fats, and complex carbs. Strength training can help build muscle mass. Consider consulting a doctor or dietitian.";
+            }
+
+            else if(bmi < 25){
+                document.getElementById("result").innerHTML = "Normal: " + bmi;
+                document.getElementById("advise").innerHTML = "Advise: Maintain a balanced diet and regular exercise. Stay hydrated and get enough sleep. Keep monitoring your health to sustain this weight."
+            }
+
+            else if(bmi < 30){
+                document.getElementById("result").innerHTML ="Overweigt: " + bmi;
+                document.getElementById("advise").innerHTML = "Advise:Adopt a healthier diet by reducing processed foods and sugars. Increase physical activity with a mix of cardio and strength training. Monitor portion sizes and consider lifestyle changes."
+            }
+
+            else {
+                document.getElementById("result").innerHTML = "Obese: " + bmi;
+                document.getElementById("advise").innerHTML = "Advise:Focus on weight loss through a structured diet and exercise plan. Reduce high-calorie, high-fat foods. Increase physical activity and consider professional guidance. Regular health check-ups are recommended."
+            }
+        }
+    </script>
+</html>

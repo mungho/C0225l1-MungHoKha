@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <table>
+            <tr style="width: 200px;">
+                <input type="number" id="month" placeholder="Nhập tháng từ 1-12" style="width: 150px;">
+            </tr>
+            <tr style="width: 50px;"><button type="button" onclick="showdays()">Tính số ngày</button></tr>
+        </table>
+        <p id="result"></p>
+    </body>
+    <script>
+        function showdays(){
+            let month = +document.getElementById("month").value;
+            if(month == 2){
+                document.getElementById("result").innerHTML = "Tháng " + month + " có " + "28 hoặc 29 ngày";
+            }
+             else if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
+                document.getElementById("result").innerHTML = "Tháng " + month + " có " + "31 ngày";
+            }
+            else if (month == 4 || month == 6 || month == 9 || month == 11){
+                document.getElementById("result").innerHTML = "Tháng " + month + " có " + "30 ngày";
+            }
+            else{
+                document.getElementById("result").innerHTML = "Vui lòng nhập tháng hợp lệ"
+            }
+
+        }
+    </script>
+</html>
