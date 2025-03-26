@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <p id="result"></p>
+    <script>
+        function kiemTraSNT(a){
+            for (let i = 2; i < a; i++){
+                if(a%i == 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        function haimuoiSNT(){
+            let count = 0;
+            let SNT = 3;
+            let danhSachSoNguyenTo = "";
+            while (count !== 20){
+                let check = kiemTraSNT(SNT);
+                if (check == true){
+                    count++;
+                    danhSachSoNguyenTo += SNT + " ";
+                }
+                SNT++;
+            }
+            alert(danhSachSoNguyenTo);
+        }
+   haimuoiSNT();
+    </script>
+</html>
