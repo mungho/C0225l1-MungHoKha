@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="result"></p>
+    </body>
+    <script>
+        let arr = [];
+        let arrResult = [];
+        
+        for (let i = 0; i < 5; i++){
+            arr[i] = +prompt("Nhập giá trị phần tử " + (i+1));
+        }
+
+
+        for(let i = 0; i < 5; i++){
+            arrResult [i] = arr[4-i];
+        }
+
+        document.getElementById('result').innerHTML = 'Mảng nghịch đảo là: ' + arrResult;
+
+    </script>
+</html>

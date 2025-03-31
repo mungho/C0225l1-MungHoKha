@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input type="number" id="inputNumber" placeholder="Enter a random number">
+    <button type="button" onclick="checkResult()">Check</button>
+    <p id="result"></p>
+</body>
+<script>
+    let arr = [];
+
+    for (let i = 0; i < 10; i++) {
+        arr[i] = prompt("Nhập giá trị phần tử " + (i + 1));
+    }
+
+
+    function checkResult() {
+        let numberValue = +document.getElementById('inputNumber').value;
+        let check = false;
+
+        for (let i = 0; i < 10; i++) {
+            if (numberValue == arr[i]) {
+                document.getElementById('result').innerHTML = 'Result: ' + numberValue + ' is in the array';
+                check = true;
+                break;
+            }
+        }
+
+        if(check == false){
+            document.getElementById('result').innerHTML = 'Result: ' + numberValue + ' is not in the array';
+        }
+    }
+</script>
+
+</html>

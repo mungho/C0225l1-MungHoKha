@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        td {
+            width: 50px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" id="rowTable" placeholder="Enter the table rows">
+    <input type="number" id="columnTable" placeholder="Enter the table columns">
+    <button type="button" onclick="createCarogame()">Create</button>
+    <!-- <button type="button" onclick="showArray()">Show</button> -->
+    <table id="caroTable"></table>
+</body>
+<script>
+    let newCaroTable = [];
+
+    function createCarogame() {
+
+        let rowTable = +document.getElementById('rowTable').value;
+        let columnTable = +document.getElementById('columnTable').value;
+        let caroGame = '';
+
+        for (let i = 0; i < rowTable; i++) {
+            newCaroTable[i] = [];
+            caroGame += '<tr>';
+            for (let k = 0; k < columnTable; k++) {
+                newCaroTable[i][k] = "<td> - </td>";
+                caroGame += newCaroTable[i][k];
+            }
+            caroGame += '</tr>'
+        }
+        document.getElementById('caroTable').innerHTML = caroGame;
+    }
+
+    function showArray() {
+        let caroGameUpdated = '';
+        console.log(newCaroTable)
+        for (let i = 0; i < newCaroTable.length; i++) {
+            caroGameUpdated += '<tr>';
+            for (let k = 0; k < newCaroTable[i].length; k++) {
+                caroGameUpdated += '<td>' + newCaroTable[i][k] + '</td>';
+            }
+            caroGameUpdated += '</tr>';
+        }
+
+        document.getElementById('caroTable').innerHTML = caroGameUpdated;
+
+    }
+
+
+
+    let count = 0;
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("table").addEventListener("click", function (event) {
+            let cell = event.target;
+            if (cell.tagName === "TD") {
+                let row = cell.parentElement; // Lấy hàng chứa ô đó
+                let rowIndex = Array.from(row.parentElement.children).indexOf(row); // Lấy chỉ mục hàng
+                let colIndex = Array.from(row.children).indexOf(cell); // Lấy chỉ mục cột
+
+                if(count % 2 == 0){
+                    newCaroTable[rowIndex][colIndex] = '<td> O </td>';
+                }else{
+                    newCaroTable[rowIndex][colIndex] = '<td> X </td>';
+                }
+            }
+
+            showArray();
+        });
+    });
+
+
+
+</script>
+
+</html>
+
+
+
+<!-- // function updateCaroGame(){
+    //     let rowTable = +document.getElementById('rowTable').value;
+    //     let columnTable = +document.getElementById('columnTable').value;
+    //     let carogame = '';
+
+    //     for(let i = 0; i < rowTable; i++){
+    //         carogame += '<tr>';
+    //         for(let k = 0; k < columnTable; k++){
+    //             carogame += newCaroTable[i][k];
+    //         }
+    //         carogame += '</tr>'
+    //     }
+    //     document.getElementById('caroTable').innerHTML = carogame;
+    // }
+
+    // let cells = document.querySelectorAll('#caroTable td');
+    // let count = 0;
+
+    // for (let i = 0; i < cells.length; i++){
+    //     cells[i].addEventListener("click", function() {
+    //     let row = this.parentElement.rowIndex - 1;
+    //     let col = this.cellIndex;
+    //     count ++;
+    //     if(count % 2 == 0){
+    //         newCaroTable[row][col] = "<td style=\"width: 50px; border: 1px solid black; text-align: center;\"> O </td>";
+    //     }else{
+    //         newCaroTable[row][col] = "<td style=\"width: 50px; border: 1px solid black; text-align: center;\"> X </td>";
+    //     }
+    //     showArray();
+    //     })
+    // } -->

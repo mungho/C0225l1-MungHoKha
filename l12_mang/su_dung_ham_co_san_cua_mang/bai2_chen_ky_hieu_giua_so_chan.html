@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="number" id="number" placeholder="Enter the number">
+        <button type="button" onclick="changeNumberString()">Check</button>
+    </body>
+    <script>
+        function changeNumberString(){
+            let numberList = document.getElementById('number').value;
+            let result = [];
+            let index = 0;
+            let numBefore;
+            let numBehind;
+            // alert(numberList[0]);
+            // alert(numberList[1]/2);
+
+            for (let i = 0; i < numberList.length; i++){
+                numBefore = numberList[i];
+                numBehind = numberList[i+1];
+
+                if(numBefore % 2 == 0 && numBehind % 2 == 0){
+                    result[index] = numBefore;
+                    result[index+1] = "-";
+                    index += 2;
+                }else{
+                    result[index] = numBefore;
+                    index++;
+                }
+            }
+
+            alert (result.join(""));
+        }
+    </script>
+</html>

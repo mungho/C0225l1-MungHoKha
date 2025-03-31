@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id="inputString" placeholder="Enter a String">
+        <button type="button" onclick="convertUpperLowerCase()">Convert</button>
+    </body>
+    <script>
+        function convertUpperLowerCase(){
+            let inputString = document.getElementById('inputString').value;
+            let result =[];
+
+            for (let i = 0; i < inputString.length; i++){
+                if(inputString[i] == inputString[i].toUpperCase()){
+                    result[i] = inputString[i].toLowerCase();
+                }else if(inputString[i] == inputString[i].toLowerCase()){
+                    result[i] = inputString[i].toUpperCase();
+                }else{
+                    result[i] = inputString[i];
+                }
+            }
+            alert(result.join(""));
+        }
+    </script>
+</html>

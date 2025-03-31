@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input type="number" id="inputNumber" placeholder="Enter a random number">
+    <button type="button" onclick="checkResult()">Check</button>
+    <p id="result"></p>
+</body>
+<script>
+    let arr = [];
+    let arrResult = [];
+    let index = 0;
+
+    for (let i = 0; i < 10; i++) {
+        arr[i] = prompt("Enter the number " + (i + 1));
+    }
+
+    alert(arr)
+
+    function checkResult() {
+        let numberValue = +document.getElementById('inputNumber').value;
+
+        for (let i = 0; i < 10; i++) {
+            if (numberValue == arr[i]) {
+                //Skip
+            }else{
+                arrResult[index] = arr[i];
+                index++;
+            }
+        }
+        arrResult[index-1] = 0;
+
+        document.getElementById('result').innerHTML = "Result is: " + arrResult;
+    }
+</script>
+
+</html>

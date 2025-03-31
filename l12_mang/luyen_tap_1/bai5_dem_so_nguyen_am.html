@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="result"></p>
+    </body>
+    <script>
+        let arr = [];
+        let count = 0;
+        let numberString = prompt('Nhập số phần tử chuỗi');
+
+        for (let i = 0; i < numberString; i++){
+            arr[i] = prompt("Nhập giá trị phần tử " + (i+1));
+        }
+
+        for (let i = 0; i < numberString; i++){
+            if(arr[i] < 0){
+                count++;
+            }
+        }
+
+        document.getElementById('result').innerHTML = 'Số số nguyên âm là: ' + count;
+    </script>
+</html>
