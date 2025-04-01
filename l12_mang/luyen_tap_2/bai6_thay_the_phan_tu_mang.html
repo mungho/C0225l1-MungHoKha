@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<script>
+    let array = [];
+    let num = prompt('Nhập số phần từ array đầu tiên');
+
+    for (let i = 0; i < num; i++) {
+        array[i] = prompt("Giá trị phần tử thứ " + i);
+    }
+
+    for(let i = 0; i < num; i++){
+        if(array[i] == '-'){
+            array[i] = '_';
+        }
+    }
+    document.writeln(array);
+</script>
+
+</html>

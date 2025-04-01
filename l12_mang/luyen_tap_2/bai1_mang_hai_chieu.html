@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="result"></p>
+    </body>
+    <script>
+        let array = [];
+        let num1 = prompt("Số phần tử mảng");
+        let num2 = prompt("Số phần tử mảng con");
+        let showvalue = "";
+
+        for (let i = 0; i < num1; i++){
+            array[i] = [];
+            for(let k = 0; k < num2; k++){
+                array[i][k] = prompt("Phần tử mảng array[" + i + "]["+ k + "]");
+            }
+        }
+
+        for (let i = 0; i < array.length; i++){
+            showvalue += "<p>" + "row " + i + "</p>"
+            for(let k = 0; k < array[i].length; k++){
+                showvalue += "<p>" + array[i][k] + "</p>"
+            }
+        }
+
+        document.getElementById("result").innerHTML = showvalue;
+    </script>
+</html>

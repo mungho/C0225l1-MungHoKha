@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let firstArray = [];
+        let secondArray = [];
+        let max;
+        let check = true;
+
+        let num1 = prompt('Nhập số phần từ array đầu tiên');
+        for(let i = 0; i < num1; i++){
+            firstArray[i] = prompt("Giá trị phần tử thứ " + i);
+        }
+
+        let num2 = prompt('Nhập số phần từ array thứ hai');
+        for(let i = 0; i < num2; i++){
+            secondArray[i] = prompt("Giá trị phần tử thứ " + i);
+        }
+
+        if(num1 < num2){
+            max = num2;
+        }else{
+            max = num1;
+        }
+
+        for (let i = 0; i < max; i++){
+            if(firstArray[i] != secondArray[i]){
+                check = false;
+            }
+        }
+
+        if(check == false){
+            document.writeln('Hai mảng khác nhau');
+        }else{
+            document.writeln('Hai mảng giống nhau');
+        }
+    </script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let num = prompt("Nhập số phần tử mảng");
+        let array = [];
+        let count = 0;
+
+        for (let i = 0; i < num; i++){
+            array[i] = prompt("Nhập giá trị phần tử thứ " + (i+1));
+        }
+
+        for(let i = 0; i < num; i++){
+            if(array[i] > 0 && array[i] < 9){
+                count++;
+            }
+        }
+
+        document.writeln("Số số từ 0 - 9 là: " + count);
+    </script>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let array = [ 'c', 's', 'c', '2', '6', '1', "l" ];
+        let swap = '';
+
+        for (let i = 0; i < array.length/2; i++){
+            swap = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = swap;
+        }
+
+        document.write(array);
+    </script>
+</html>
