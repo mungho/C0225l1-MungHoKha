@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="number" id="number" placeholder="Enter a random number">
+        <button type="button" onclick="alertMessage()">Increase One</button>
+    </body>
+    <script>
+        function alertMessage(){
+            let number = +document.getElementById('number').value;
+            alert('Number is: ' + (number + 1));
+        }
+    </script>
+</html>

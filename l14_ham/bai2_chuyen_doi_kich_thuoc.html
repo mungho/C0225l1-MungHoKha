@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="number" id="num" placeholder="Enter the information">
+        <button type="button" onclick="meterToFeet()">Transfer to Feet</button>
+        <button type="button" onclick="feetfeetToMeter()">Transfer to Meter</button>
+        <p id="result"></p>
+    </body>
+    <script>
+        function meterToFeet(){
+            let num = +document.getElementById('num').value;
+            let foot = 3.279 * num;
+            document.getElementById('result').innerHTML = 'Meter to feet: ' + foot;
+        }
+
+        function feetfeetToMeter(){
+            let num = +document.getElementById('num').value;
+            let meter = 0.305 * num;
+            document.getElementById('result').innerHTML = 'Feet to meter: ' + meter;
+        }
+        
+    </script>
+</html>

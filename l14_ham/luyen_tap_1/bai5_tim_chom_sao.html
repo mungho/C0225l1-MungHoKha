@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let starGroup = ['Ursa Minor', 'Taurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        
+        function findStar(starName, star, starGroup){
+            let index = '';
+
+            for (let i = 0; i < star.length; i++){
+                if(starName == star[i]){
+                    index = i;
+                }
+            }
+
+            alert(starGroup[index]);
+        }
+
+        let starName = prompt('Enter a star name');
+
+        findStar(starName, star, starGroup);
+    </script>
+</html>

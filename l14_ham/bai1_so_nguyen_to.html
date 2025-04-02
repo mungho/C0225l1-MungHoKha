@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script>
+    function checkPrimeNumber(num) {
+
+        for (let i = 2; i < num / 2; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if (checkPrimeNumber(prompt('Enter a random number')) == true){
+        document.writeln('This is a prime number');
+    }else{
+        document.writeln('This is not a prime number');
+    }
+</script>
+
+</html>
