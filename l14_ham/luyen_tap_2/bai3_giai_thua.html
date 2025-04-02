@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let num = prompt('Nhập số bất kỳ');
+
+        function giaiThua(num){
+            let giaiThua = 1;
+            for(let i = 1; i <= num; i++){
+                giaiThua *= i;
+            }
+            return giaiThua;
+        }
+
+        document.writeln('Giai thừa của ' + num +' là: ' + giaiThua(num));
+    </script>    
+</html>

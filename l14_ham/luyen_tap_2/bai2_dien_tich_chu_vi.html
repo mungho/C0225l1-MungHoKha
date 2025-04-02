@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let banKinh= prompt ('Nhập bán kính: ');
+        const PI = 3.14;
+
+        function dienTichHinhTron(banKinh){
+            return PI*banKinh*banKinh;
+        }
+
+        function chuViHinhTron(banKinh){
+            return 2*PI*banKinh;
+        }
+
+        document.writeln("Chu vi và diện tích hình tròn lần lượt là: " + chuViHinhTron(banKinh) + " & " + dienTichHinhTron(banKinh));
+    </script>
+</html>
