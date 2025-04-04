@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let num1 = prompt('Nhập số thứ nhất muốn đổi chỗ trong mảng: ' + arr);
+        let num2 = prompt('Nhập số thứ hai muốn đổi chỗ trong mảng: ' + arr);
+
+        function changePosition(arr, num1, num2){
+            arr[num1] = arr[num1] + arr[num2];
+            arr[num2] = arr[num1] - arr[num2];
+            arr[num1] = arr[num1] - arr[num2];
+        }
+
+        changePosition(arr, num1, num2);
+        alert('Kết quả sau khi đổi chỗ là: ' + arr);
+    </script>
+</html>

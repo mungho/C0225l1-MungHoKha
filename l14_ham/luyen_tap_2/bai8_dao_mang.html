@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let index = prompt('Số phần tử mảng cần khai báo');
+        let arrayNumber = [];
+
+        for(let i = 0; i < index; i++){
+            arrayNumber[i] = prompt('Nhập giá trị phần tử mảng thứ ' + (i+1));
+        }
+
+        function reverseArray(arrayNumber){
+            arrayNumber.reverse();
+        }
+
+        reverseArray(arrayNumber);
+        alert('Thứ tự phần tử mảng sau thay đổi là: ' + arrayNumber);
+    </script>
+</html>
