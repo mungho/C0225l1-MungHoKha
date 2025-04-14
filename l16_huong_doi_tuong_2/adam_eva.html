@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class Apple{
+            #weight;
+            constructor (weight){
+                this.#weight = weight;
+            }
+
+            descrease(){
+                this.#weight--;
+            }
+
+            isEmpty(){
+                if(this.#weight == 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            getWeight(){
+                return this.#weight;
+            }
+        }
+
+
+        class Human{
+            #name;
+            #gender;
+            #weight;
+            constructor(name, gender, weight){
+                this.#name = name;
+                this.#gender = gender;
+                this.#weight = weight;
+            }
+
+            isMale(){
+                return this.#gender;
+            }
+
+            setGender(isMale){
+                if(isMale){
+                    this.#gender = true;
+                }else{
+                    this.#gender = false;
+                }
+            }
+
+            checkApple(apple){
+                return !apple.isEmpty(); 
+            }
+
+            eat(apple){
+                if(this.checkApple(apple)){
+                    this.#weight++;
+                    apple.descrease();
+                }
+            }
+
+            say(string){
+                console.log(string);
+            }
+
+            getName(){
+                return this.#name;
+            }
+
+            setName(name){
+                this.#name = name;
+            }
+
+            getWeight(){
+                return this.#weight;
+            }
+
+            setWeight(weight){
+                if(weight > 0){
+                    this.#weight = weight;
+                }else{
+                    console.log('The weight is invalid');
+                }
+            }
+
+        }
+
+        const apple1 = new Apple(10);
+        const eva = new Human('Eva', false, 46);
+        const adam = new Human('Adam', true, 65);
+
+        console.log(adam.getName());
+        adam.eat(apple1);
+        console.log(apple1.getWeight());
+        console.log(adam.getWeight());
+        console.log(adam.checkApple(apple1));
+        eva.eat(apple1);
+        console.log(apple1.getWeight());
+
+
+    </script>
+</html>

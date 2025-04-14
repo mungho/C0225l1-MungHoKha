@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    function createPerson(name, age) {
+        this.name = name;
+        this.age = age;
+        this.personInfo =function(){
+            return "hi";
+        };
+    }
+
+    // Thêm thuộc tính country vào prototype của createPerson
+    createPerson.personInfo.prototype.country = 'Vietnam';
+
+    // Tạo các instance từ createPerson
+    const person1 = new createPerson("Alice", 25);
+    const person2 = new createPerson("Bob", 30);
+
+    console.log(person1.country);  // 👉 Vietnam
+    console.log(person2.country);  // 👉 Vietnam
+</script>
+</body>
+</html>

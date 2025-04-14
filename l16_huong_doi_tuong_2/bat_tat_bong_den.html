@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class ElectricLamp{
+            #status;
+            constructor(status){
+                this.#status = status;
+            }
+
+            turnOff(){
+                this.#status = false;
+            }
+
+            turnOn(){
+                this.#status = true;
+            }
+
+            getStatusLamp(){
+                return this.#status;
+            }
+        }
+
+        class SwitchButton{
+            constructor(status){
+                this.status = status;
+                this.lamp = null;
+            }
+
+            connectToLamp(electicLamp){
+                this.lamp = electicLamp; //địa chỉ object hai thằng này là một
+            }
+
+            switchOff(){
+                this.status = false;
+                this.lamp.turnOff();
+            }
+
+            switchOn(){
+                this.status = true;
+                this.lamp.turnOn();
+            }
+        }
+
+        const lamp = new ElectricLamp(false);
+        const switchbutton = new SwitchButton(false);
+        switchbutton.connectToLamp(lamp);
+        switchbutton.switchOn();
+
+        console.log(lamp.getStatusLamp());
+
+    </script>
+</html>

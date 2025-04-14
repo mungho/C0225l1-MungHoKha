@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="chuVi"></p>
+    <p id="dienTich"></p>
+    <p id="hienThi"></p>
+    <canvas id="canvas" width="1000px" height="500px" style="border: 1px solid black;"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        chuVi() {
+            return (this.width + this.height) * 2;
+        }
+
+        dientich() {
+            return this.width * this.height;
+        }
+
+        drawRectangle() {
+            let hinhCN = document.getElementById('canvas');
+            let veHCN = hinhCN.getContext('2d');
+            veHCN.moveTo (100,100);
+            veHCN.lineTo (this.width + 100, 100);
+            veHCN.stroke();
+            veHCN.moveTo (this.width + 100,100);
+            veHCN.lineTo (this.width + 100, this.height + 100);
+            veHCN.stroke();
+            veHCN.moveTo (this.width + 100, this.height + 100);
+            veHCN.lineTo (100, this.height + 100);
+            veHCN.stroke();
+            veHCN.moveTo (100, this.height + 100);
+            veHCN.lineTo (100, 100);
+            veHCN.stroke();
+        }
+    }
+
+    const hinhChuNhat = new Rectangle(500, 200);
+    document.getElementById('chuVi').innerHTML = 'Chu vi hình chữ nhật là: ' + hinhChuNhat.chuVi();
+    document.getElementById('dienTich').innerHTML = 'Diện tích hình chữ nhật là: ' + hinhChuNhat.dientich();
+    hinhChuNhat.drawRectangle();
+</script>
+
+</html>
