@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let num1 = +prompt('Nhập số bất kỳ 1:');
+        let num2 = +prompt('Nhập số bất kỳ 2:');
+        let num3 = +prompt('Nhập số bất kỳ 3:');
+
+        if(num1 > num2){
+            if(num1 > num3){
+                document.writeln(`${num1} là số lớn nhất`);
+            }else{
+                document.writeln(`${num3} là số lớn nhất`);
+            }
+        }else{
+                if(num2 > num3){
+                    document.writeln(`${num2} là số lớn nhất`);
+                }else{
+                    document.writeln(`${num3} là số lớn nhất`);
+                }
+            }
+    </script>
+</html>

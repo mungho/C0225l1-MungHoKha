@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let data = +prompt('Lượng data sử dụng hàng tháng là (GB):');
+
+        if(data < 2){
+            document.writeln(`Tổng số tiền cần phải trả là ${data*15000}`)
+        }else if (data < 5){
+            document.writeln(`Tổng số tiền cần phải trả là ${data*10000}`)
+        }else{
+            document.writeln(`Tổng số tiền cần phải trả là ${data*8000}`)
+        }
+    </script>
+</html>

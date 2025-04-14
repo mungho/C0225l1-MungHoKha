@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let kiemTra = +prompt('Điểm bài kiểm tra là');
+        let giuaKy = +prompt('Điểm bài kiểm tra giữa kỳ là');
+        let cuoiKy = +prompt('Điểm bài kiểm tra cuối kỳ là');
+        let trungBinh = kiemTra*0.1 + giuaKy*0.3 + cuoiKy*0.6;
+
+        if(trungBinh < 5){
+            document.writeln('Học sinh yếu');
+        } else if(trungBinh < 6.5){
+            document.writeln('Học sinh trung bình');
+        } else if(trungBinh < 8.5){
+            document.writeln('Học sinh trung khá');
+        }else{
+            document.writeln('Học sinh trung giỏi');
+        }
+    </script>
+</html>

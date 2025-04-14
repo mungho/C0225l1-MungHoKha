@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <script>
+            let revenue = +prompt('Doanh số là:');
+
+            if(revenue < 100000000){
+                document.writeln(`Tiền hoa hồng tháng này là: ${revenue*0.1}`)
+            }else if(revenue < 500000000){
+                document.writeln(`Tiền hoa hồng tháng này là: ${revenue*0.15}`)
+            }else if(revenue < 1000000000){
+                document.writeln(`Tiền hoa hồng tháng này là: ${revenue*0.2}`)
+            }else{
+                document.writeln(`Tiền hoa hồng tháng này là: ${revenue*0.25}`)
+            }
+    </script>
+</html>
