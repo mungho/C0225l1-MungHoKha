@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id="firstString" placeholder="First String">
+        <input type="text" id="secondString" placeholder="Second String">
+        <button type="button" onclick="displayResult()">Check</button>
+        <p id="display"></p>
+    </body>
+    <script>
+        function commonCharacterCount(firstArray, secondArray) {
+            let resultArray = [];
+
+            for (let i = 0; i < firstArray.length; i++) {
+                for (let k = 0; k < secondArray.length; k++) {
+                    if (firstArray[i] == secondArray[k]) {
+                        resultArray.push(firstArray[i]);
+                        secondArray.splice(k, 1);
+                        console.log (resultArray)
+                        console.log (secondArray)
+                    }
+                }
+            }
+
+            return resultArray;
+        }
+
+        function displayResult () {
+            let firstString = document.getElementById('firstString').value.split('');
+            let secondString = document.getElementById('secondString').value.split('');
+            document.getElementById('display').innerText = 'The common characters are: ' + (commonCharacterCount(firstString, secondString));
+        }
+    </script>
+</html>

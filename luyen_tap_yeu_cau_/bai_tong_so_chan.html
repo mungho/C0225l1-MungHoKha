@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body></body>
+<script>
+    let rowNumber = +prompt ('Nhập số hàng');
+    let columnNumber = +prompt ('Nhập số cột');
+    let mainArray = [];
+    let tempArray = [];
+    let sum = 0;
+
+    for (let i = 0; i < rowNumber; i++) {
+        for (let k = 0; k < columnNumber; k++) {
+            let temp = +prompt(`Nhập giá trị hàng thứ nhất array[${i}][${k}]`);
+            tempArray.push(temp);
+        }
+        mainArray.push(tempArray);
+        tempArray = [];
+    }
+
+    for (let i = 0; i < rowNumber; i++) {
+        for (let k = 0; k < columnNumber; k++) {
+            if (mainArray[i][k] % 2 == 0) {
+                sum += mainArray[i][k];
+            }
+        }
+    }
+
+    document.writeln(sum);
+</script>
+</html>

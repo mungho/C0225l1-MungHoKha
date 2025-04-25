@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input type="text" id="inputText">
+    <button type="button" onclick="checkWord()">Kiểm tra</button>
+    <p id="display"></p>
+</body>
+
+<script>
+    function checkWord() {
+        let inputText = document.getElementById('inputText').value;
+        let check = false;
+        let arr = ['u', 'e', 'o', 'a', 'i'];
+
+        if (inputText.length != 1) {
+            document.getElementById('display').innerHTML = `'${inputText}' là chuỗi không hợp lệ. Vui lòng nhập 1 ký tự`;
+        } else {
+            for (let i = 0; i < 5; i++) {
+                if (arr[i] == inputText.toLowerCase()) {
+                    check = true;
+                    break;
+                }
+            }
+            
+            if (check) {
+                document.getElementById('display').innerHTML = `'${inputText}' là một nguyên âm`;
+            } else {
+                document.getElementById('display').innerHTML = `'${inputText}' là một phụ âm`;
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input type="number" id="salary">
+    <button type="button" onclick="taxCalculation()">Check Tax</button>
+    <br>
+    <p id="display"></p>
+</body>
+<script>
+    function taxCalculation() {
+        let salaryAmount = +document.getElementById('salary').value;
+        let display = document.getElementById('display');
+
+        if (salaryAmount < 0) {
+            display.innerHTML = 'Your salary is invalid. Please try again!';
+        } else if (salaryAmount < 7000000) {
+            display.innerHTML = `Your tax is: ${salaryAmount * 0.05}`;
+        } else if (salaryAmount < 15000000) {
+            display.innerHTML = `Your tax is: ${salaryAmount * 0.1}`;
+        } else {
+            display.innerHTML = `Your tax is: ${salaryAmount * 0.2}`;
+        }
+    }
+</script>
+
+</html>
