@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="soNguyenTo"></p>
+    <p id="sosoNguyenTo"></p>
+</body>
+<script>
+    let rowNumber = +prompt('Nhập số hàng');
+    let columnNumber = +prompt('Nhập số cột');
+    let mainArray = [];
+    let tempArray = [];
+    let sum = 0;
+    let check = true;
+    let result = [];
+
+    for (let i = 0; i < rowNumber; i++) {
+        for (let k = 0; k < columnNumber; k++) {
+            let temp = +prompt(`Nhập giá trị hàng thứ nhất array[${i}][${k}]`);
+            tempArray.push(temp);
+        }
+        mainArray.push(tempArray);
+        tempArray = [];
+    }
+
+    function kiemTraSoNguyenTo() {
+        for (let i = 0; i < rowNumber; i++) {
+            for (let k = 0; k < columnNumber; k++) {
+                for (let j = 2; j < mainArray[i][k]; j++) {
+                    if (mainArray[i][k] % j == 0 && mainArray[i][k] > 2) {
+                        check = false;
+                        break;
+                    }
+                }
+
+                check ? result.push(mainArray[i][k]) : result;
+                check = true;
+            }
+        }
+        return result;
+    }
+
+    document.getElementById('soNguyenTo').innerText = ('Số nguyên tố: ' + kiemTraSoNguyenTo());
+    document.getElementById('sosoNguyenTo').innerText = ('Số số nguyên tố: ' + result.length);
+</script>
+
+</html>

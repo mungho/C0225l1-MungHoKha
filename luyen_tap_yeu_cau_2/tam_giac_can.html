@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="display"></div>
+</body>
+<script>
+    let chieuCao = +prompt('Nhập chiều cao tam giác cân');
+    let tamGiachtml = '';
+
+    for (let i = 0; i < chieuCao; i++) {
+        for (let k = 0; k < chieuCao*2; k++) {
+            if (k < (chieuCao - i -1) || k > (chieuCao + i - 1)) {
+                tamGiachtml += '&nbsp;';
+            } else {
+                tamGiachtml += '*';
+            }
+        }
+        tamGiachtml += '<br>';
+    }
+
+    document.getElementById('display').innerHTML = tamGiachtml;
+</script>
+
+</html>

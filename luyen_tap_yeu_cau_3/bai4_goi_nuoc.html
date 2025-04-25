@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            height: 100vh; /* Chiều cao toàn màn hình */
+        }
+        .left, .right {
+            flex: 1; /* Chia đều */
+            border: 1px solid #333;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left {
+            background-color: #f0f0f0;
+        }
+        .right {
+            background-color: #e0f7fa;
+        }
+        td{
+            width: 150px;
+            /* text-align: center; */
+            border: rgb(156, 156, 156) solid 0.2px;
+        }
+        table{
+            /* border: black solid; */
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            background-color: rgb(6, 159, 6);
+            border-radius: 5px;
+            border: 0px;
+            color: white;
+        }
+        tr{
+            height: 50px;
+        }
+
+        .order{
+            text-align: center;
+        }
+
+        .no{
+            text-align: center;
+            width: 50px;
+        }
+
+        .menu{
+            /* text-align: center; */
+            width: 500px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .price{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <table>
+                <tr>
+                    <td class="no">STT.</td>
+                    <td class="menu">MÓN NƯỚC</td>
+                    <td class="price">GIÁ (VND)</td>
+                    <td class="order">ĐẶT MÓN</td>
+                </tr>
+                <tr>
+                    <td class="no">1</td>
+                    <td class="menu">Cà phê</td>
+                    <td class="price">25.000</td>
+                    <td class="order">
+                        <button type="button" onclick="addOrder('Cà phê')">ADD</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="no">2</td>
+                    <td class="menu">Cam vắt</td>
+                    <td class="price">35.000</td>
+                    <td class="order">
+                        <button type="button" onclick="addOrder('Cam vắt')">ADD</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="no">3</td>
+                    <td class="menu">Nước ép cà rốt</td>
+                    <td class="price">35.000</td>
+                    <td class="order">
+                        <button type="button" onclick="addOrder('Nước ép cà rốt')">ADD</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="no">4</td>
+                    <td class="menu">Nước ép cà chua</td>
+                    <td class="price">35.000</td>
+                    <td class="order">
+                        <button type="button" onclick="addOrder('Nước ép cà chua')">ADD</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="no">5</td>
+                    <td class="menu">Nước lọc</td>
+                    <td class="price">10.000</td>
+                    <td class="order">
+                        <button type="button" onclick="addOrder('Nước lọc')">ADD</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="no">6</td>
+                    <td class="menu">Nước dừa</td>
+                    <td class="price">25.000</td>
+                    <td class="order">
+                        <button type="button" onclick="addOrder('Nước dừa')">ADD</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>Bảng phải</h2>
+            <p>Nội dung bảng bên phải</p>
+        </div>
+    </div>
+</body>
+</html>

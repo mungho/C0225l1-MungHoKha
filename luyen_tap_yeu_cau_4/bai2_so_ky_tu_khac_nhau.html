@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id="firstString">
+        <button type="button" onclick="displayResult()">Check</button>
+        <p id="display"></p>
+    </body>
+    <script>
+        function differentSymbolsNaive(arr) {
+            let resultArray = [arr[0]];
+            let check;
+
+            for (let i = 1; i < arr.length; i++) {
+                check = false;
+                for (let k = 0; k < resultArray.length; k++) {
+                    if (arr[i] == resultArray[k]) {
+                        check = true;
+                    }
+                }
+
+                if (!check) {
+                    resultArray.push(arr[i]);
+                }
+            }
+
+            return resultArray;
+        }
+
+        function displayResult () {
+            let firstString = document.getElementById('firstString').value.split('');
+            document.getElementById('display').innerText = 'The difference words are: ' + (differentSymbolsNaive(firstString));
+        }
+    </script>
+</html>
