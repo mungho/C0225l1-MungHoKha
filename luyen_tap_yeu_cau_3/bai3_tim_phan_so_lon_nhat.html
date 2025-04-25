@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let numerators = [1, 8, 9, 6, 5];
+        let denominators = [0.5, 10, 12, 9, 3];
+
+        function maxFraction (arr1, arr2) {
+            let max = arr1[0]/arr2[0];
+            let index = 0;
+
+            for (let i = 1; i < arr1.length; i++) {
+                if (arr1[i]/arr2[i] > max) {
+                    max = arr1[i]/arr2[i];
+                    index = i;
+                }
+            }
+
+            return index;
+        }
+
+        document.writeln('Vị trí chứa phân số lớn nhất trong mảng là: ' + maxFraction(numerators, denominators));
+    </script>
+</html>

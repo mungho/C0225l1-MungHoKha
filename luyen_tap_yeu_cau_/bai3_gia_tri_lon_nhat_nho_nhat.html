@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="maxValue"></p>
+    <p id="minValue"></p>
+</body>
+<script>
+    let rowNumber = +prompt('Nhập số hàng');
+    let columnNumber = +prompt('Nhập số cột');
+    let mainArray = [];
+
+    for (let i = 0; i < rowNumber; i++) {
+        mainArray[i] = [];
+        for (let k = 0; k < columnNumber; k++) {
+            mainArray[i][k] = +prompt(`Nhập giá trị hàng thứ nhất array[${i}][${k}]`);
+        }
+    }
+
+    function maxNumber() {
+        let max = mainArray[0][0];
+        for (let i = 0; i < rowNumber; i++) {
+            for (let k = 0; k < columnNumber; k++) {
+                if (mainArray[i][k] > max) {
+                    max = mainArray[i][k];
+                }
+            }
+        }
+        return max;
+    }
+
+    function minNumber() {
+        let min = mainArray[0][0];
+        for (let i = 0; i < rowNumber; i++) {
+            for (let k = 0; k < columnNumber; k++) {
+                if (mainArray[i][k] < min) {
+                    min = mainArray[i][k];
+                }
+            }
+        }
+        return min;
+    }
+
+    document.getElementById('maxValue').innerText = 'Giá trị lớn nhất của mảng là:' + maxNumber();
+    document.getElementById('minValue').innerText = 'Giá trị nhỏ nhất của mảng là:' + minNumber();
+</script>
+
+</html>
