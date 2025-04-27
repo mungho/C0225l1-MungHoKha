@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let arr = [1, 5, 6, 11, 9, 20, 8, 0, 8, 1];
+    let resultArray = [];
+    checkNumber(arr);
+
+    function checkNumber(array) {
+        let tempArray = [];
+
+        for (let i = 0; i < array.length - 2; i++) {
+            if (array[i] + array[i + 1] == array[i + 2]) {
+                tempArray = [array[i], array[i + 1]];
+                resultArray.push(tempArray);
+            }
+        }
+
+        let max = resultArray[0][0] + resultArray[0][1];
+        let temp;
+
+        for (let i = 0; i < resultArray.length; i++) {
+            for (let k = 0; k < resultArray.length - i - 1; k++) {
+                if (resultArray[k][0] + resultArray[k][1] > resultArray[k+1][0] + resultArray[k+1][1]) {
+                    temp = resultArray[k];
+                    resultArray[k] = resultArray[k+1];
+                    resultArray[k+1] = temp
+                }
+            }
+        }
+        console.log(resultArray);
+    }
+</script>
+
+</html>

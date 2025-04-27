@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="displayArray"></p>
+    <p id="result"></p>
+</body>
+<script>
+    let numb = prompt('Khai báo số phần tử mảng');
+    let array = [];
+
+    function addToArray(num) {
+        if (num % 3 == 0 && num <= 15) {
+            for (let i = 0; i < num; i++) {
+                let arrayValue = prompt(`Nhập phần từ mảng thứ ${i}`);
+                array.push(arrayValue);
+            }
+        } else {
+            alert('Số phần tử mảng phải là bội của 3 và nhỏ hơn 15');
+        }
+        return array;
+    }
+
+    function checkRetangle(array) {
+        let arr = [];
+        for (let i = 0; i < array.length; i += 3) {
+            arr = [array[i], array[i + 1], array[i + 2]].sort((a, b) => a - b);
+
+            if (Math.pow(arr[0], 2) + Math.pow(arr[1], 2) != Math.pow(arr[2], 2)) {
+                return 'NO';
+            }
+        }
+        return 'YES';
+    }
+
+
+    document.getElementById('displayArray').innerText = 'Giá trị của mảng là: ' + addToArray(numb);
+    document.getElementById('result').innerText = 'Kết quả kiểm tra: ' + checkRetangle(array);
+
+</script>
+
+</html>
