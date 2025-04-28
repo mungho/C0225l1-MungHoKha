@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    let numb = prompt('Nhập số phần từ mảng');
+    let arr = [];
+    let resultArray = [];
+    let randomNumber;
+    let resultHTML = '';
+
+    if (numb < 0 || numb >= 50) {
+        alert('Số phần tử mảng không hợp lệ');
+    } else {
+        for (let i = 0; i < numb; i++) {
+            arr[i] = +prompt(`Nhập phần tử thứ ${i + 1}`);
+        }
+
+        randomNumber = prompt('Nhập một số bất kỳ');
+    }
+
+    function checkNumber(array, randomNumber) {
+        for (let i = 0; i < array.length; i++) {
+            for (let k = i + 1; k < array.length; k++) {
+                if ((array[k] + array[i]) % randomNumber == 0) {
+                    let numtemp = [array[i], array[k]];
+                    resultArray.push(numtemp);
+                }
+            }
+        }
+    }
+
+    checkNumber(arr, randomNumber);
+
+    for (let i = 0; i < resultArray.length; i++) {
+        resultHTML += `<p> Cặp thứ ${i + 1} là: (${resultArray[i]}) </p>`;
+    }
+
+    document.getElementById('result').innerHTML = resultHTML;
+</script>
+
+</html>
