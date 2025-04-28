@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="studentPoint" placeholder="Điểm học sinh">
+    <button type="button" onclick="checkResult()">KIỂM TRA</button>
+    <br><br>
+    <p id="displayResult"></p>
+</body>
+<script>
+    function checkMark(studentPoint) {
+        if (studentPoint < 0 || studentPoint > 100) {
+            alert('Vui lòng kiểm tra lại thông tin điểm số');
+        } else {
+            if (studentPoint >= 48) {
+                if (studentPoint % 5 > 2) {
+                    studentPoint = (studentPoint + 5) - (studentPoint % 5);
+                    return studentPoint;
+                } else {
+                    return studentPoint;
+                }
+            } else {
+                return studentPoint;
+            }
+        }
+    }
+    function checkResult () {
+        let studentPoint = +document.getElementById('studentPoint').value;
+        studentPoint = checkMark(studentPoint);
+        document.getElementById('displayResult').innerText = 'Điểm sau khi làm tròn là: ' + studentPoint;
+    }
+</script>
+
+</html>

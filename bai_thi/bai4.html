@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        th {
+            border: 1px solid black;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="customerId" placeholder="Mã khách hàng">
+        <input type="text" id="customerName" placeholder="Tên khách hàng">
+        <input type="text" id="customerPhoneNumber" placeholder="Số điện thoại">
+        <input type="text" id="customerAddress" placeholder="Địa chỉ khách hàng">
+        <input type="text" id="customerEmail" placeholder="Email khách hàng">
+        <button type="button" onclick="addCustomer()">THÊM MỚI</button>
+        <br><br>
+        <table id="customerList">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã khách hàng</th>
+                    <th>Tên khách hàng</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+<script>
+    let customerList = [];
+
+    class Customer {
+        constructor(customerId, customerName, customerPhoneNumber, customerAddress, customerEmail) {
+            this.customerId = customerId;
+            this.customerName = customerName;
+            this.customerPhoneNumber = customerPhoneNumber;
+            this.customerAddress = customerAddress;
+            this.customerEmail = customerEmail;
+        }
+    }
+
+    function addCustomer() {
+        let customerId = document.getElementById('customerId').value.trim();
+        let customerName = document.getElementById('customerName').value.trim();
+        let customerPhoneNumber = document.getElementById('customerPhoneNumber').value.trim();
+        let customerAddress = document.getElementById('customerAddress').value.trim();
+        let customerEmail = document.getElementById('customerEmail').value.trim();
+
+        if (customerId == '' || customerName == '' || customerPhoneNumber == '' || customerAddress == '' || customerEmail == '') {
+            alert('Vui lòng kiểm tra lại thông tin khách hàng trước khi thêm mới')
+        } else {
+            let newCustomer = new Customer(customerId, customerName, customerPhoneNumber, customerAddress, customerEmail);
+            customerList.push(newCustomer);
+            console.log(customerList)
+        }
+
+        document.getElementById('customerList').innerHTML = displayCustomerList(customerList);
+    }
+
+    function displayCustomerList(listOfCustomer) {
+        let stringHTML = '<thead><tr><th>STT</th><th>Mã khách hàng</th><th>Tên khách hàng</th><th>Số điện thoại</th><th>Địa chỉ</th><th>Email</th></tr></thead>';
+        for (let i = 0; i < listOfCustomer.length; i++) {
+            stringHTML += '<tr>';
+            stringHTML += `<td> ${i + 1} </td>`;
+            stringHTML += `<td> ${listOfCustomer[i].customerId} </td>`;
+            stringHTML += `<td> ${listOfCustomer[i].customerName} </td>`;
+            stringHTML += `<td> ${listOfCustomer[i].customerPhoneNumber} </td>`;
+            stringHTML += `<td> ${listOfCustomer[i].customerAddress} </td>`;
+            stringHTML += `<td> ${listOfCustomer[i].customerEmail} </td>`;
+            stringHTML += '</tr>';
+        }
+        return stringHTML;
+    }
+</script>
+
+</html>
