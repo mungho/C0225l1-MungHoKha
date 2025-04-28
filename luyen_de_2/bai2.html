@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="textInput" placeholder="Nhập chuỗi ký tự">
+    <button type="button" onclick="standFor()">KIỂM TRA</button>
+    <p id="result"></p>
+</body>
+
+<script>
+    function standFor() {
+        let stringResult = '';
+        let textInput = document.getElementById('textInput').value;
+        let textArray = textInput.trim().split(' ');
+
+        if (textArray.length == 1) {
+            alert('Chuỗi chỉ có 1 từ nên không cần viết tắt');
+        } else {
+            for (let i = 0; i < textArray.length; i++) {
+                if (textArray[i] == '') {
+                    textArray.splice(i, 1);
+                    i--;
+                }
+            }
+
+            for (let i = 0; i < textArray.length; i++) {
+                stringResult += textArray[i][0];
+            }
+
+            document.getElementById('result').innerText = 'Chuỗi viết tắt là: ' + stringResult.toUpperCase();
+        }
+    }
+</script>
+
+</html>
